@@ -1,9 +1,9 @@
-console.log(``)
-import { User } from "./model/User";
+import { User } from './model/User';
 
 const user = new User({ name: "testname", age: 55 });
-user.on("change", () => { });
-user.on("change", () => { });
-user.on("trigger", () => { });
+user.on("change", () => { console.log(`change `); });
+user.on("change", () => { console.log(`change `); });
+user.on("trigger", () => { console.log(`trigger event`); });
+user.trigger("change");
+user.trigger("trigger");
 
-console.log(user);
